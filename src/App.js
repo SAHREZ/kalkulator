@@ -1,10 +1,18 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Menu from "./components/menu";
+
 
 function App() {
   const [value, setValue] = useState("");
+
+  useEffect(() => {
+    alert('WELCOME DI CALCULATOR')
+  }, [])
+  
   return (
     <>
+    <Menu />
       <div className="container">
         <div className="calculator">
           <form action="">
@@ -19,8 +27,7 @@ function App() {
                 value="."
                 onClick={e => setValue(value + e.target.value)}
               />
-              <input
-                type="button"
+              <input type="button"
                 value="/"
                 onClick={e => setValue(value + e.target.value)}
               />
